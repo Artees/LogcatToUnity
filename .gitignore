@@ -328,3 +328,26 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+
+# Android Studio
+*.iml
+/LogcatToUnity/.gradle
+/LogcatToUnity/local.properties
+/LogcatToUnity/.idea/caches
+/LogcatToUnity/.idea/libraries
+/LogcatToUnity/.idea/modules.xml
+/LogcatToUnity/.idea/workspace.xml
+/LogcatToUnity/.idea/navEditor.xml
+/LogcatToUnity/.idea/assetWizardSettings.xml
+/LogcatToUnity/.DS_Store
+/LogcatToUnity/build
+/LogcatToUnity/captures
+/LogcatToUnity/.externalNativeBuild
+/LogcatToUnity/logcattounityplugin/build
+
+/LogcatToUnityUnity/Assets/Plugins/Editor/JetBrains
+/LogcatToUnityUnity/*.collabignore
+/LogcatToUnityUnity/Library
+/LogcatToUnityUnity/*.csproj
+/LogcatToUnityUnity/*.sln
+/LogcatToUnityUnity/Temp
