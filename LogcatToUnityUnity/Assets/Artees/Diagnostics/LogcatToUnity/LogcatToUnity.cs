@@ -22,8 +22,11 @@ namespace Artees.Diagnostics.LogcatToUnity
         /// <summary>
         /// The identifier of the Android process (PID), which can be used to filter log messages.
         /// </summary>
-        public int Pid => _logcat.Pid;
-        
+        public int Pid
+        {
+            get { return _logcat.Pid; }
+        }
+
         /// <summary>
         /// A regular expression to filter <see cref="OnMessageReceived"/> events. The default
         /// regular expression is <code>(?&lt;!AudioTrack.*){Pid}</code>
@@ -31,9 +34,9 @@ namespace Artees.Diagnostics.LogcatToUnity
         /// </summary>
         public Regex Filter
         {
-            set => _logcat.Filter = value;
+            set { _logcat.Filter = value; }
         }
-        
+
         private readonly List<string> _messages = new List<string>();
 
         private LogcatAndroidWrapper _logcat;
@@ -53,7 +56,7 @@ namespace Artees.Diagnostics.LogcatToUnity
         private void Update()
         {
             if (_messages.Count == 0) return;
-            OnMessageReceived?.Invoke(_messages.ToArray());
+            if (OnMessageReceived != null) OnMessageReceived(_messages.ToArray());
             _messages.Clear();
         }
 
@@ -74,7 +77,7 @@ namespace Artees.Diagnostics.LogcatToUnity
         {
             _logcat.Log(messageTag, message);
         }
-        
+
         /// <summary>
         /// Runs logcat, dumps the log and exits logcat. Does not trigger the
         /// <see cref="OnMessageReceived"/> event.

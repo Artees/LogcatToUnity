@@ -30,7 +30,7 @@ namespace Artees.Diagnostics.LogcatToUnity
             _messages.AddRange(messages);
             var r = _messages.Count - 15;
             if (r > 0) _messages.RemoveRange(0, r);
-            _stringBuilder.Clear();
+            ClearStringBuilder();
             foreach (var line in _messages)
             {
                 _stringBuilder.AppendLine();
@@ -39,6 +39,11 @@ namespace Artees.Diagnostics.LogcatToUnity
             }
 
             _text.text = _stringBuilder.ToString();
+        }
+
+        private void ClearStringBuilder()
+        {
+            _stringBuilder.Length = 0;
         }
 
         private void OnDestroy()
