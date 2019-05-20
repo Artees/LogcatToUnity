@@ -50,14 +50,20 @@ namespace Artees.Diagnostics.LogcatToUnity
 
         private void ReceiveMessage(string message)
         {
-            _messages.Add(message);
+            lock (_messages)
+            {
+                _messages.Add(message);
+            }
         }
 
         private void Update()
         {
-            if (_messages.Count == 0) return;
-            if (OnMessageReceived != null) OnMessageReceived(_messages.ToArray());
-            _messages.Clear();
+            lock (_messages)
+            {
+                if (_messages.Count == 0) return;
+                if (OnMessageReceived != null) OnMessageReceived(_messages.ToArray());
+                _messages.Clear();
+            }
         }
 
         private void OnDestroy()
