@@ -2,10 +2,12 @@
 using System.Text.RegularExpressions;
 using UnityEngine;
 
-namespace Artees.Diagnostics.LogcatToUnity
+namespace Artees.LogcatToUnity
 {
     internal class LogcatAndroidWrapper
     {
+        public const string AndroidPackage = "artees.logcattounityplugin";
+
         public event Action<string> OnMessageReceived;
 
         public readonly int Pid;
@@ -13,7 +15,7 @@ namespace Artees.Diagnostics.LogcatToUnity
         public Regex Filter { private get; set; }
 
         private readonly AndroidJavaObject _androidObject =
-            new AndroidJavaObject("artees.diagnostics.logcattounityplugin.LogcatToUnity");
+            new AndroidJavaObject(AndroidPackage + ".LogcatToUnity");
 
         private readonly LogcatProxy _proxy;
 

@@ -1,4 +1,4 @@
-package artees.diagnostics.logcattounityplugin;
+package artees.logcattounityplugin;
 
 import android.os.AsyncTask;
 

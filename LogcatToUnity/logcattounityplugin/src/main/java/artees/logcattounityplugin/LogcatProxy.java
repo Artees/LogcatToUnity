@@ -1,4 +1,4 @@
-package artees.diagnostics.logcattounityplugin;
+package artees.logcattounityplugin;
 
 public interface LogcatProxy {
     void log(String message);

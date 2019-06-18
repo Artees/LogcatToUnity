@@ -3,7 +3,7 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Artees.Diagnostics.LogcatToUnity
+namespace Artees.LogcatToUnity
 {
     /// <inheritdoc />
     /// <summary>

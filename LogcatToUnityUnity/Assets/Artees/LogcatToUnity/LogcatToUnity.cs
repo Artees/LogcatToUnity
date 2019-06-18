@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
-namespace Artees.Diagnostics.LogcatToUnity
+namespace Artees.LogcatToUnity
 {
     /// <inheritdoc />
     /// <summary>

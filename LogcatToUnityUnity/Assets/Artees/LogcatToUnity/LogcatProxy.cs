@@ -3,16 +3,16 @@ using System.Diagnostics.CodeAnalysis;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Artees.Diagnostics.LogcatToUnity
+namespace Artees.LogcatToUnity
 {
     internal class LogcatProxy : AndroidJavaProxy
     {
         private readonly Action<string> _onMessageReceived;
 
         public bool IsActive { private get; set; }
-        
-        public LogcatProxy(Action<string> onMessageReceived) : 
-            base("artees.diagnostics.logcattounityplugin.LogcatProxy")
+
+        public LogcatProxy(Action<string> onMessageReceived) :
+            base(LogcatAndroidWrapper.AndroidPackage + ".LogcatProxy")
         {
             _onMessageReceived = onMessageReceived;
         }
