@@ -2,7 +2,7 @@
 Sends Android log messages to the Unity game engine.
 
 # Installation
-Copy the *LogcatToUnityUnity/Assets/Artees* folder into your project's *Assets* folder.
+Use [my package registry](https://artees.games/upm).
 
 # Usage
 ```

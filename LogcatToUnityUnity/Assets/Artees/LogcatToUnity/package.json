@@ -1,0 +1,14 @@
+
+{
+    "name" : "games.artees.logcat-to-unity",
+    "version" : "1.3.1",
+    "displayName" : "LogcatToUnity",
+    "description" : "Sends Android log messages to the Unity game engine",
+    "unity"       : "2019.1",
+    "unityRelease" : "",
+    "author"       : {
+        "name" : "Artees",
+        "email" : "yo@artees.games",
+        "url"   : "https://github.com/Artees/LogcatToUnity"
+    }
+}
