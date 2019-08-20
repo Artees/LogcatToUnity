@@ -22,10 +22,7 @@ namespace Artees.LogcatToUnity
         /// <summary>
         /// The identifier of the Android process (PID), which can be used to filter log messages.
         /// </summary>
-        public int Pid
-        {
-            get { return _logcat.Pid; }
-        }
+        public int Pid => _logcat.Pid;
 
         /// <summary>
         /// A regular expression to filter <see cref="OnMessageReceived"/> events. The default
@@ -34,7 +31,7 @@ namespace Artees.LogcatToUnity
         /// </summary>
         public Regex Filter
         {
-            set { _logcat.Filter = value; }
+            set => _logcat.Filter = value;
         }
 
         private readonly List<string> _messages = new List<string>();
@@ -61,7 +58,7 @@ namespace Artees.LogcatToUnity
             lock (_messages)
             {
                 if (_messages.Count == 0) return;
-                if (OnMessageReceived != null) OnMessageReceived(_messages.ToArray());
+                OnMessageReceived?.Invoke(_messages.ToArray());
                 _messages.Clear();
             }
         }

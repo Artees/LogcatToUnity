@@ -22,7 +22,7 @@ namespace Artees.LogcatToUnity
         public LogcatAndroidWrapper()
         {
             Pid = _androidObject.Call<int>("getPid");
-            Filter = new Regex(string.Format("(?<!AudioTrack.*){0}", Pid));
+            Filter = new Regex($"(?<!AudioTrack.*){Pid}");
             _proxy = new LogcatProxy(ReceiveMessage);
         }
 
@@ -34,14 +34,14 @@ namespace Artees.LogcatToUnity
             _proxy.IsActive = true;
             _androidObject.Call("start", _proxy);
             if (!Application.isEditor) return;
-            ReceiveMessage(string.Format("({0}): Logcat output will be shown ", Pid));
-            ReceiveMessage(string.Format("({0}): here when running on an Android device", Pid));
+            ReceiveMessage($"({Pid}): Logcat output will be shown ");
+            ReceiveMessage($"({Pid}): here when running on an Android device");
         }
 
         private void ReceiveMessage(string message)
         {
             if (!Filter.IsMatch(message)) return;
-            if (OnMessageReceived != null) OnMessageReceived(message);
+            OnMessageReceived?.Invoke(message);
         }
 
         /// <summary>
