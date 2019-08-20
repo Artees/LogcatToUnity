@@ -14,8 +14,14 @@ namespace Artees.LogcatToUnity
 
         public Regex Filter { private get; set; }
 
+#if UNITY_ANDROID && !UNITY_EDITOR
         private readonly AndroidJavaObject _androidObject =
             new AndroidJavaObject(AndroidPackage + ".LogcatToUnity");
+#else
+        private readonly DummyAndroidJavaObject _androidObject =
+            new DummyAndroidJavaObject(AndroidPackage + ".LogcatToUnity");
+#endif
+
 
         private readonly LogcatProxy _proxy;
 
