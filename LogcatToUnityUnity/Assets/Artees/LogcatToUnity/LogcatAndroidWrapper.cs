@@ -22,7 +22,6 @@ namespace Artees.LogcatToUnity
             new DummyAndroidJavaObject(AndroidPackage + ".LogcatToUnity");
 #endif
 
-
         private readonly LogcatProxy _proxy;
 
         public LogcatAndroidWrapper()

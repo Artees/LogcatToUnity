@@ -1,9 +1,19 @@
 {
+  "scopedRegistries": [
+    {
+      "name": "Artees",
+      "url": "https://upm.artees.games:4873",
+      "scopes": [
+        "games.artees"
+      ]
+    }
+  ],
   "dependencies": {
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.ide.rider": "1.0.8",
     "com.unity.package-manager-ui": "2.2.0",
     "com.unity.ugui": "1.0.0",
+    "games.artees.fps-counter": "0.1.6",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
