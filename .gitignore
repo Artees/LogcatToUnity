@@ -339,3 +339,4 @@ ASALocalRun/
 /LogcatToUnityUnity/*.csproj
 /LogcatToUnityUnity/*.sln
 /LogcatToUnityUnity/Temp
+/LogcatToUnityUnity/Assets/Artees/UnityPackageManifestGenerator
